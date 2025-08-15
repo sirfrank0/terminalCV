@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consola Simulada</title>
+    <title>Frank's Console</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,11 @@
         font-family: "Press Start 2P", system-ui;
         font-weight: 400;
         font-style: normal;
+        }
+
+        b{
+            font-size: 12px;
+            color: #e7e6e3;
         }
 
 
@@ -51,7 +56,7 @@
             color: #EAE4D5;
             /* font-family: monospace; */
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             box-shadow: 1px 8px 8px rgba(27, 27, 27, 0.6);
             border-radius: 4px;
@@ -68,8 +73,8 @@
             font-size: 9px;
             border-radius: 4px;
             box-shadow: 4px 4px 8px rgba(27, 27, 27, 0.4);
-            width: 72%;
-            max-width: 240px;
+            width: 99%;
+            /* max-width: 240px; */
             height: 52px;
         }
 
@@ -158,7 +163,7 @@
         <div id="separador"></div>
 
         <div id="cont-commands">
-            <input type="text" id="input" placeholder="Escribe un comando...">
+            <input type="text" id="input" placeholder="Type a command...">
             <div id="cont-botones">
                 <span class="material-symbols-outlined">radio_button_checked</span>
                 <span class="material-symbols-outlined">radio_button_checked</span>
@@ -178,12 +183,14 @@
                 input.value = "";
 
                 // Simulación de respuestas a comandos básicos
-                if (command.toLowerCase() === "comandos") {
-                    consoleDiv.innerHTML += "<div class='comando'>frank: una breve descripción mia<br><br>cv: mira mi hoja de vida<br><br>linkedin: mira mi perfil de linkedin<br><br>portafolio: mira mi portafolio<br><br>clear: limpiar consola<br><br>idiomas: mira los idiomas que hablo</div>";
-                } else if (command.toLowerCase() === "fecha") {
-                    consoleDiv.innerHTML += "<div class='comando'>Fecha actual: " + new Date().toLocaleString() + "</div>";
-                } else if (command.toLowerCase() === "info") {
-                    consoleDiv.innerHTML += "<div class='comando'>Esta es mi info<br>info1<br>info2</div>"
+                if (command.toLowerCase() === "help") {
+                    consoleDiv.innerHTML += "<div class='comando'>frank: a brief description of myself<br><br>job: view my work experience<br><br>study: view my education<br><br>skils: view my skills<br><br>links: visit links to my portfolio and networks<br><br>clear: clean console</div>";
+                } else if (command.toLowerCase() === "frank") {
+                    consoleDiv.innerHTML += "<div class='comando'><b>Hi, I'm Frank Riaño.</b> I use tools such as HTML, CSS, Javascript, React, Figma, Photoshop and Illustrator. Thanks to my knowledge in programming, customer satisfaction, and graphic design, I achieve a functional, aesthetic, and optimized final experience for my clients.</div>";
+                } else if (command.toLowerCase() === "job") {
+                    consoleDiv.innerHTML += "<div class='comando'><b>Frontend Development Analyst</b><br> Solati SAS<br> 2023 - Now<br><br> Currently responsible for enhancing the user interface by analyzing backend PHP classes and controllers, implementing style optimizations with HTML, CSS, and JavaScript,PHP managing code through Git, adding and fixing impactful functionality improvements, ensuring UI consistency, and supporting application features with SQL queries and data manipulation.<br><br><br><b>UX Copywriter</b><br>BootNetwork<br>2022 - 2023<br><br>Redesigned and rewrote website content to improve user experience and conversions, crafted persuasive copy, conducted A/B testing for performance validation, and contributed to a 30% increase in traffic and sales during a six‑month tenure with this US‑based company.<br><br><br><b>English Customer Service</b><br>Teleperformance, Sutherland, OneLink<br>2018 - 2022<br><br>Provided remote support via chat and voice to international customers, utilized communication and information management tools effectively, and earned multiple performance bonuses while contributing to improved user feedback through hotline services.<br><br><br><b>Team metrics management</b><br>Teleperformance<br>2020 - 2020<br><br>Monitored and evaluated customer service team members’ performance, analyzed productivity metrics, achieved the highest quality score as a line analyst, and led improvements that boosted quality scores by 40%.<br><br><br><b>English Teacher</b><br>YouAndEnglish.com<br>2020 - 2021<br><br>Taught English to Spanish students aged 13 to 68 from A1 level, applied personalized virtual teaching methods, and successfully guided them to reach B1 proficiency, enabling them to pass academic English exams.</div>"
+                } else if (command.toLowerCase() === "study") {
+                    consoleDiv.innerHTML += "<div class='comando'><b>Software Development</b><br>Universidad Nacional Abierta y a Distancia<br>2022 – 2025<br><br> Engaged in end‑to‑end software lifecycle activities including requirements gathering, design, development, and testing, validating IT applications against test plans to ensure quality and security, applying test management and automation methodologies, and contributing as a proactive, collaborative team member to deliver technology‑driven solutions with added business value.<br><br><br><b>Google User Experience (UX) Design</b><br>Google / Coursera<br>2023 - 2023<br><br>Acquired core UX/UI design principles, developed skills in user research, persona creation, wireframing, and prototyping, mastered usability testing techniques, and became proficient in design tools such as Figma, Adobe XD, and Sketch to create user‑centered digital experiences.<br><br><br><b>Frontend Development & UX/UI Design</b><br>Platzi<br>2021 - 2025<br><br>Built expertise in HTML, CSS, and JavaScript (including frameworks), translating visual designs into functional interfaces, applying usability and responsive design principles for web and mobile, using research insights to guide decisions, and producing high‑fidelity prototypes through iterative design processes.<br><br><br><b>Systems Engineering / English and Spanish Teaching</b><br>Universidad Antonio Nariño<br>2017 - 2022<br><br>Applied knowledge in systems engineering and computer science to optimize software, evaluate development tools and data management systems, ensure software quality, and plan for hardware and software acquisitions to support technology sector needs.<br><br>Developed proposals for teaching foreign languages, attained advanced grammatical and practical English proficiency, cultivated effective communication skills in a second language, and studied the culture of English‑speaking societies to enhance contextual understanding.</div>"
                 } else if (command.toLowerCase() === "clear") {
                     consoleDiv.innerHTML = window.contenidoInicial;
                 }else {
@@ -197,8 +204,8 @@
         window.onload = function() {
         let consoleDiv = document.getElementById("console");
 
-        let bienvenida = "¡Bienvenid@ a la Consola Simulada de Frank!";
-        let ayuda = "Puedes escribir 'comandos' para ver las opciones disponibles";
+        let bienvenida = "Welcome to Frank's Console!";
+        let ayuda = "You can type 'help' to see the available options.";
         let asciiArt = `(⌐■_■)`;
 
     // Guardar el contenido inicial en una variable global
