@@ -126,7 +126,7 @@
                         color:#d7c69d;
         }
 
-        @media (max-width: 440px) { /* Cambia el valor según tu necesidad */
+        @media (max-width: 440px) { 
             #cont-commands {
                 justify-content: center;
             }
@@ -182,7 +182,7 @@
                 consoleDiv.innerHTML += "<div class='new-comando'>> " + command + "</div>";
                 input.value = "";
 
-                // Simulación de respuestas a comandos básicos
+                
                 if (command.toLowerCase() === "help") {
                     consoleDiv.innerHTML += "<div class='comando'>frank: a brief description of myself<br><br>job: view my work experience<br><br>study: view my education<br><br>skils: view my skills<br><br>links: visit links to my portfolio and networks<br><br>clear: clean console</div>";
                 } else if (command.toLowerCase() === "frank") {
@@ -208,7 +208,7 @@
         let ayuda = "You can type 'help' to see the available options.";
         let asciiArt = `(⌐■_■)`;
 
-    // Guardar el contenido inicial en una variable global
+    
         window.contenidoInicial = `<div>${bienvenida}</br></br></div><div>${ayuda}</br></br></div><pre>${asciiArt}</br></br></pre>`;
         consoleDiv.innerHTML = window.contenidoInicial;
 
