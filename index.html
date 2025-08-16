@@ -31,7 +31,8 @@
 
         a{
             text-decoration: none;
-            color: inherit;        
+            color: inherit;
+            word-break: break-word;        
         }
 
         body {
@@ -194,7 +195,7 @@
 
                 
                 if (command.toLowerCase() === "help") {
-                    consoleDiv.innerHTML += "<div class='comando'>frank: A brief description of myself<br><br>job: View my work experience<br><br>study: View my education<br><br>skils: View my skills and tools<br><br>links: Visit links to my portfolio and networks<br><br>clear: Clean the console</div>";
+                    consoleDiv.innerHTML += "<div class='comando'>> frank: A brief description of myself<br><br>> job: View my work experience<br><br>> study: View my education<br><br>> skils: View my skills and tools<br><br>> links: Visit links to my portfolio and networks<br><br>> clear: Clean the console</div>";
                 } else if (command.toLowerCase() === "frank") {
                     consoleDiv.innerHTML += "<div class='comando'><b>Hi, I'm Frank Riaño.</b> I’m a frontend‑leaning software developer who delivers user‑first web products end to end. On the client side, I build accessible, responsive interfaces with HTML, CSS, JavaScript and frameworks, and reusable component libraries mapped from Figma. On the server side, I work with PHP and SQL to keep pages fast and data flows clean. I’m comfortable in Git‑based workflows and bridging UX/UI decisions with engineering trade‑offs.<br><br>My background spans Software Development, Systems Engineering, and UX Design, plus a studies in English and Spanish so I pair technical rigor with clear, human‑centered communication. I’ve shipped custom WordPress themes/plugins, refined feedbacks through A/B tests, and accessibility scores so interfaces aren’t just pretty—they’re usable and performant. Bilingual and collaborative, I like problems where I can connect design intent to reliable code and measurable outcomes.</div>";
                 } else if (command.toLowerCase() === "job") {
